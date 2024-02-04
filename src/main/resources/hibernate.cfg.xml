@@ -15,8 +15,6 @@
         <mapping class="org.example.entity.Country"/>
         <mapping class="org.example.entity.Customer"/>
         <mapping class="org.example.entity.Film"/>
-        <mapping class="org.example.entity.FilmActor"/>
-        <mapping class="org.example.entity.FilmCategory"/>
         <mapping class="org.example.entity.FilmText"/>
         <mapping class="org.example.entity.Inventory"/>
         <mapping class="org.example.entity.Language"/>

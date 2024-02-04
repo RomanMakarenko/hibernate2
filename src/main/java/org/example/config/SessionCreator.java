@@ -1,6 +1,7 @@
 package org.example.config;
 
 
+import org.example.entity.Actor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,7 +13,8 @@ public enum SessionCreator implements AutoCloseable {
     SessionCreator() {
         Configuration configuration = new Configuration();
         configuration.configure();
-        configuration.addPackage("org/example/entity");
+//        configuration.addAnnotatedClass(Actor.class);
+//        configuration.addPackage("org/example/entity");
         sessionFactory = configuration.buildSessionFactory();
     }
 

@@ -13,7 +13,7 @@ public class Language {
     @Id
     @Column(name = "language_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Byte id;
+    private Integer id;
 
     @Column(name = "name", columnDefinition = "char")
     private String name;
@@ -22,11 +22,11 @@ public class Language {
     @UpdateTimestamp
     private LocalDateTime lastUpdate;
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,13 +44,6 @@ public class Language {
 
     public void setLastUpdate(LocalDateTime lastUpdate) {
         this.lastUpdate = lastUpdate;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Language language)) return false;
-        return Objects.equals(id, language.id) && Objects.equals(name, language.name) && Objects.equals(lastUpdate, language.lastUpdate);
     }
 
     @Override

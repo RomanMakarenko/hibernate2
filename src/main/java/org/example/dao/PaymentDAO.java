@@ -1,9 +1,10 @@
 package org.example.dao;
 
 import org.example.entity.Payment;
+import org.hibernate.SessionFactory;
 
-public class PaymentDAO extends AbstractHibernateDao {
-    public PaymentDAO () {
-        super(Payment.class);
+public class PaymentDAO extends AbstractHibernateDao<Payment> {
+    public PaymentDAO (SessionFactory sessionFactory) {
+        super(Payment.class, sessionFactory);
     }
 }

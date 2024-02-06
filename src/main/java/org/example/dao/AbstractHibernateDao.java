@@ -10,8 +10,9 @@ public abstract class AbstractHibernateDao<T> {
     private final Class clazz;
     private SessionFactory sessionFactory;
 
-    public AbstractHibernateDao(final Class<T> clazzToSet) {
+    public AbstractHibernateDao(final Class<T> clazzToSet, SessionFactory sessionFactory) {
         this.clazz = clazzToSet;
+        this.sessionFactory = sessionFactory;
     }
 
     public T getById(final long id) {
@@ -22,7 +23,7 @@ public abstract class AbstractHibernateDao<T> {
         Query query = getCurrentSession().createQuery("from " + clazz.getName(), clazz);
         query.setFirstResult(from);
         query.setMaxResults(count);
-        return query.list();
+        return query.getResultList();
     }
 
     public List<T> findAll() {

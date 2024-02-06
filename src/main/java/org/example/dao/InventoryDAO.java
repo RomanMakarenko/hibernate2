@@ -1,9 +1,10 @@
 package org.example.dao;
 
 import org.example.entity.Inventory;
+import org.hibernate.SessionFactory;
 
-public class InventoryDAO extends AbstractHibernateDao {
-    public InventoryDAO () {
-        super(Inventory.class);
+public class InventoryDAO extends AbstractHibernateDao<Inventory> {
+    public InventoryDAO (SessionFactory sessionFactory) {
+        super(Inventory.class, sessionFactory);
     }
 }

@@ -7,4 +7,8 @@ public class ActorDAO extends AbstractHibernateDao<Actor> {
     public ActorDAO (SessionFactory sessionFactory) {
         super(Actor.class, sessionFactory);
     }
+
+    public Actor getById(final short id) {
+        return getCurrentSession().get(Actor.class, id);
+    }
 }

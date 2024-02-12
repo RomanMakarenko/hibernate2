@@ -13,7 +13,7 @@ public class Language {
     @Id
     @Column(name = "language_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Byte id;
 
     @Column(name = "name", columnDefinition = "char")
     private String name;
@@ -22,11 +22,11 @@ public class Language {
     @UpdateTimestamp
     private LocalDateTime lastUpdate;
 
-    public Integer getId() {
+    public Byte getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Byte id) {
         this.id = id;
     }
 

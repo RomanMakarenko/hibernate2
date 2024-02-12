@@ -19,10 +19,9 @@ public class FilmText {
     @Type(type = "text")
     private String description;
 
-//    @OneToOne
-//    @JoinColumn(name = "film_id")
-//    private Film film;
-
+    @OneToOne
+    @JoinColumn(name = "film_id")
+    private Film film;
 
     public Short getId() {
         return id;
@@ -48,24 +47,11 @@ public class FilmText {
         this.description = description;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof FilmText filmText)) return false;
-        return Objects.equals(id, filmText.id) && Objects.equals(title, filmText.title) && Objects.equals(description, filmText.description);
+    public Film getFilm() {
+        return film;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, description);
-    }
-
-    @Override
-    public String toString() {
-        return "FilmText{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+    public void setFilm(Film film) {
+        this.film = film;
     }
 }

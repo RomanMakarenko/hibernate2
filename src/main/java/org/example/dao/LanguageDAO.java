@@ -7,8 +7,4 @@ public class LanguageDAO extends AbstractHibernateDao<Language> {
     public LanguageDAO (SessionFactory sessionFactory) {
         super(Language.class, sessionFactory);
     }
-
-    public Language getById(final byte id) {
-        return getCurrentSession().get(Language.class, id);
-    }
 }

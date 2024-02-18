@@ -1,7 +1,6 @@
 package org.example.dao;
 
 import org.example.entity.Film;
-import org.example.entity.Rental;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 

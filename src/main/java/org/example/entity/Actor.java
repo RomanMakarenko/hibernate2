@@ -3,7 +3,6 @@ package org.example.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Set;

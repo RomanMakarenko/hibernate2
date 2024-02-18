@@ -15,8 +15,8 @@ public abstract class AbstractHibernateDao<T> {
         this.sessionFactory = sessionFactory;
     }
 
-    public T getById(final long id) {
-        return(T) getCurrentSession().get(clazz, id);
+    public T getById(final Number id) {
+        return (T) getCurrentSession().get(clazz, id);
     }
 
     public List<T> getItems(int from, int count) {

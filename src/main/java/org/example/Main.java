@@ -51,10 +51,10 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        Customer customer = main.createCustomer();
-        main.returnRental();
-        main.customerRentInventory(customer);
-        //main.addNewFilm();
+//        Customer customer = main.createCustomer();
+//        main.returnRental();
+//        main.customerRentInventory(customer);
+        main.addNewFilm();
     }
 
     private void addNewFilm() {
@@ -62,6 +62,8 @@ public class Main {
             Transaction transaction = session.beginTransaction();
             Language language = languageDAO.getById((byte) 1);
             Film film = new Film();
+            Category category = categoryDAO.getById((byte) 1);
+            film.setCategories(Set.of(category));
             film.setActors(Set.of(actorDAO.getById((short) 1)));
             film.setSpecialFeatures(Set.of(Feature.BEHIND_THE_SCENES));
             film.setLanguage(language);
@@ -74,10 +76,6 @@ public class Main {
             film.setTitle("One actor film");
             film.setRentalDuration((byte) 10);
             film.setReleaseYear(Year.now());
-
-            Set<Category> categories = new HashSet<>();
-            categories.add(categoryDAO.getById((byte) 1));
-            film.setCategories(categories);
             filmDAO.create(film);
 
             FilmText filmText = new FilmText();
